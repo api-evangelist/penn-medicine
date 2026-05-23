@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/penn-medicine/json-schema/penn-medicine-fhir-patient-schema.json",
+  "title": "Penn Medicine FHIR Patient",
+  "description": "Subset schema for a US Core Patient resource as exposed by the Penn Medicine (UPHS) FHIR R4 endpoint.",
+  "type": "object",
+  "required": ["resourceType", "id"],
+  "properties": {
+    "resourceType": { "const": "Patient" },
+    "id": { "type": "string" },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": { "type": "string", "format": "uri" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "active": { "type": "boolean" },
+    "name": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "use": { "type": "string" },
+          "family": { "type": "string" },
+          "given": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "gender": { "enum": ["male", "female", "other", "unknown"] },
+    "birthDate": { "type": "string", "format": "date" },
+    "telecom": { "type": "array" },
+    "address": { "type": "array" },
+    "communication": { "type": "array" }
+  }
+}

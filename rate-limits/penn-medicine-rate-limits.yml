@@ -1,0 +1,62 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Penn Medicine
+providerId: penn-medicine
+created: '2026-05-23'
+modified: '2026-05-23'
+tags:
+  - Healthcare
+  - Hospital
+  - FHIR
+  - Rate Limiting
+  - Throttling
+description: |
+  Machine-readable rate-limit scaffold for the Penn Medicine FHIR R4 API. UPHS does not publish
+  formal per-key rate-limit numbers; the values below capture the Epic platform's typical patient-app
+  and backend-services governance behavior plus the underlying HL7 Bulk Data Access IG semantics.
+  Real limits are confirmed during app registration / data-sharing agreements.
+headers:
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+  serviceUnavailable: 503
+limits:
+  - tier: patient-access
+    name: Patient App Default
+    scope: app-client
+    metric: requests_per_minute
+    limit: 60
+    burst: 120
+    timeFrame: minute
+    applies:
+      - Penn Medicine FHIR R4 API
+  - tier: provider-directory
+    name: Public Provider Directory
+    scope: ip
+    metric: requests_per_minute
+    limit: 30
+    burst: 60
+    timeFrame: minute
+    applies:
+      - Penn Medicine FHIR R4 API
+  - tier: bulk-data
+    name: Backend Services Bulk Export
+    scope: contract
+    metric: concurrent_jobs
+    limit: 1
+    timeFrame: instance
+    applies:
+      - Penn Medicine FHIR R4 API
+policies:
+  - name: Backoff Strategy
+    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header when present.
+  - name: Bulk Export Polling
+    description: Per the HL7 Bulk Data Access IG, clients poll the Content-Location URL using Retry-After hints; aggressive polling will be throttled.
+  - name: Patient Consent
+    description: All patient-context reads require an active OAuth access token; revoked tokens immediately stop returning data regardless of rate limits.
+  - name: Fair Use
+    description: Sustained traffic that materially impacts UPHS clinical operations may be throttled or revoked outside the documented limits.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

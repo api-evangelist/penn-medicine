@@ -1,0 +1,24 @@
+apiVersion: naftiko.dev/v1
+kind: WorkflowCapability
+metadata:
+  name: bulk-cohort-export
+  provider: penn-medicine
+  description: Backend-services (client_credentials) workflow that triggers a Group-level $export at the Penn Medicine FHIR endpoint, polls for completion, and downloads NDJSON files for population analytics. Requires Penn-Medicine-approved app registration with system/*.read scope.
+spec:
+  trigger:
+    type: oauth2-client-credentials
+    tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+    scopes:
+      - system/*.read
+  steps:
+    - id: kickoff
+      capability: penn.bulk.export
+      params:
+        groupId: <approved-group-id>
+        _type: Patient,Condition,Observation,Encounter,Procedure,MedicationRequest,Immunization
+    - id: poll-status
+      type: poll
+      description: Poll the Content-Location URL until status 200 (manifest) or terminal error.
+    - id: download-ndjson
+      type: fetch
+      description: Stream each output[].url NDJSON file with the access token.

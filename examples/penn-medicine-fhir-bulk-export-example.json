@@ -1,0 +1,20 @@
+{
+  "transactionTime": "2026-05-23T12:00:00Z",
+  "request": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Group/example-group/$export?_type=Patient,Condition,Observation",
+  "requiresAccessToken": true,
+  "output": [
+    {
+      "type": "Patient",
+      "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Binary/patient-file-1.ndjson"
+    },
+    {
+      "type": "Condition",
+      "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Binary/condition-file-1.ndjson"
+    },
+    {
+      "type": "Observation",
+      "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Binary/observation-file-1.ndjson"
+    }
+  ],
+  "error": []
+}

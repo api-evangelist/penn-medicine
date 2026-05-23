@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/penn-medicine/json-schema/penn-medicine-fhir-observation-schema.json",
+  "title": "Penn Medicine FHIR Observation",
+  "description": "Subset schema for a US Core Observation resource exposed by the Penn Medicine FHIR endpoint.",
+  "type": "object",
+  "required": ["resourceType", "status", "code"],
+  "properties": {
+    "resourceType": { "const": "Observation" },
+    "id": { "type": "string" },
+    "status": { "enum": ["registered", "preliminary", "final", "amended", "corrected", "cancelled", "entered-in-error", "unknown"] },
+    "category": { "type": "array" },
+    "code": { "type": "object" },
+    "subject": { "type": "object" },
+    "effectiveDateTime": { "type": "string", "format": "date-time" },
+    "valueQuantity": { "type": "object" },
+    "component": { "type": "array" }
+  }
+}

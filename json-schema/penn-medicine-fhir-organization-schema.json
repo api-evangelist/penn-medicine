@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/penn-medicine/json-schema/penn-medicine-fhir-organization-schema.json",
+  "title": "Penn Medicine FHIR Organization",
+  "description": "Subset schema for a US Core Organization resource served by the Penn Medicine Provider Directory.",
+  "type": "object",
+  "required": ["resourceType", "name"],
+  "properties": {
+    "resourceType": { "const": "Organization" },
+    "id": { "type": "string" },
+    "identifier": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "system": { "type": "string", "format": "uri" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "active": { "type": "boolean" },
+    "type": { "type": "array" },
+    "name": { "type": "string" },
+    "alias": { "type": "array", "items": { "type": "string" } },
+    "telecom": { "type": "array" },
+    "address": { "type": "array" }
+  }
+}

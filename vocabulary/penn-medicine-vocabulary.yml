@@ -1,0 +1,53 @@
+name: Penn Medicine Vocabulary
+description: Controlled vocabulary describing the Penn Medicine FHIR API surface, UPHS facilities, and the open-source health-informatics work of the Perelman School of Medicine.
+modified: '2026-05-23'
+
+terms:
+  - term: Penn Medicine
+    definition: The combined enterprise of the University of Pennsylvania Health System (UPHS) and the Perelman School of Medicine. An $11.9 billion enterprise with nearly 49,000 faculty and staff.
+  - term: UPHS
+    definition: University of Pennsylvania Health System. The hospital arm of Penn Medicine, comprising six acute-care hospitals plus home care, rehab, and behavioral health.
+  - term: HUP
+    definition: Hospital of the University of Pennsylvania. The flagship academic medical center of UPHS in West Philadelphia.
+  - term: Pennsylvania Hospital
+    definition: The nation's first hospital, chartered in 1751; now part of UPHS.
+  - term: PPMC
+    definition: Penn Presbyterian Medical Center, UPHS's Level I trauma center in West Philadelphia.
+  - term: Lancaster General Health
+    definition: Lancaster, PA-based community hospital integrated with UPHS.
+  - term: Chester County Hospital
+    definition: West Chester, PA-based community hospital integrated with UPHS.
+  - term: Princeton Health
+    definition: Plainsboro, NJ-based hospital and care network integrated with UPHS.
+  - term: Perelman School of Medicine
+    definition: The medical school of the University of Pennsylvania. Received $580 million in NIH funding in FY 2023.
+  - term: FHIR
+    definition: Fast Healthcare Interoperability Resources. HL7 standard for healthcare data exchange. Penn Medicine serves FHIR R4 from ssproxy.pennhealth.com.
+  - term: US Core
+    definition: HL7 US Core Implementation Guide. Penn Medicine's CapabilityStatement instantiates us-core-server 6.1.0.
+  - term: SMART on FHIR
+    definition: SMART App Launch profile for OAuth2 authorization against FHIR servers. Penn Medicine supports EHR launch, standalone launch, and backend services.
+  - term: Patient Access API
+    definition: CMS-9115-F mandated FHIR API enabling patients to download their clinical and claims data.
+  - term: Provider Directory API
+    definition: CMS-9115-F mandated public FHIR API exposing Practitioner, PractitionerRole, Organization, Location, and Endpoint resources without authentication.
+  - term: Bulk Data Access
+    definition: HL7 Flat FHIR Group-level $export operation for large-scale population data extracts; Penn Medicine's CapabilityStatement declares conformance to the bulk-data IG.
+  - term: MyPennMedicine
+    definition: Penn Medicine's MyChart-based patient portal at secure.mypennmedicine.org. Surfaces medical records, lab results, secure messaging, telehealth, refills, and scheduling.
+  - term: PhysicianLink
+    definition: EpicLink portal for community physicians referring into UPHS, accessed at secure3.pennmedicine.org/EpicLink.
+  - term: Epic on FHIR
+    definition: Vendor developer portal at fhir.epic.com where third parties register apps and target Penn Medicine (Organization ID 346).
+  - term: Cobalt
+    definition: Open-source mental-health and well-being platform built by the Penn Medicine Center for Health Care Innovation (Penn-Medicine-CHCI). Published as cobalt-api (Java) and cobalt-web (TypeScript).
+  - term: Penn Signals
+    definition: Penn Medicine Predictive Healthcare GitHub organization (pennsignals). Historically the home of CHIME (the COVID-19 Hospital Impact Model).
+  - term: PMACS
+    definition: Penn Medicine Academic Computing Services. Maintains 17 public Rails libraries, JSON:API tools, Oracle adapters, and Slate API docs.
+  - term: Penn Medicine BioBank
+    definition: Perelman School of Medicine biorepository organization on GitHub (pennbiobank).
+  - term: Care Everywhere
+    definition: Epic-to-Epic record exchange tool Penn Medicine uses to share patient records with other Epic-based providers.
+  - term: Carequality
+    definition: National interoperability framework that lets Carequality-enabled practices retrieve patient records from Penn Medicine.

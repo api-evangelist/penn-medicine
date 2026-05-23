@@ -1,0 +1,95 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Penn Medicine
+providerId: penn-medicine
+created: '2026-05-23'
+modified: '2026-05-23'
+tags:
+  - Healthcare
+  - Hospital
+  - FHIR
+  - Patient Access
+  - Provider Directory
+description: |
+  Machine-readable plans surface for the Penn Medicine FHIR R4 API. Penn Medicine does not operate
+  a commercial developer-portal pricing scheme; access is governed by CMS-9115-F (no fee for patient
+  apps and the public Provider Directory) and by direct agreement with UPHS for system-level Bulk
+  Data clients. The tiers below describe the access-and-governance reality rather than monetary prices.
+plans:
+  - id: penn-medicine-patient-access
+    name: Patient Access (No Fee)
+    type: free
+    description: |
+      SMART-on-FHIR patient apps registered through Epic on FHIR (Organization ID 346). No fee
+      is charged to the app or the patient. Required by CMS-9115-F.
+    entries:
+      - label: Patient FHIR Reads
+        description: Read of any patient-context FHIR resource for the authenticated patient
+        name: patient_reads
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains: []
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: SMART App Launch
+      - name: Standalone Launch
+      - name: 59 FHIR R4 Resource Types
+      - name: US Core 6.1.0
+      - name: Patient-Context Scopes
+  - id: penn-medicine-provider-directory
+    name: Public Provider Directory (No Fee, No Auth)
+    type: free
+    description: |
+      Unauthenticated access to the Penn Medicine FHIR Provider Directory (Practitioner,
+      PractitionerRole, Organization, Location, Endpoint) per CMS-9115-F.
+    entries:
+      - label: Directory Reads
+        description: Anonymous reads of provider-directory resources
+        name: directory_reads
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains: []
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Anonymous Read
+      - name: No App Registration Required
+      - name: 5 Directory Resource Types
+  - id: penn-medicine-bulk-data
+    name: Bulk Data (Custom Agreement)
+    type: enterprise
+    description: |
+      System-level Bulk Data ($export) access for population analytics and research. Requires
+      a Penn Medicine-approved app registration with the system/*.read scope and a custom
+      data-sharing / IRB agreement with UPHS.
+    entries:
+      - label: System-Level Reads
+        description: Negotiated system-level FHIR reads and $export jobs
+        name: system_reads
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: configurable
+        domains: []
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: client_credentials Authentication
+      - name: Group-Level $export
+      - name: Custom Data-Sharing Agreement
+      - name: IRB / Research Review (where applicable)
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
