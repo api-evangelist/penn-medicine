@@ -1,0 +1,485 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Penn Medicine FHIR R4 API",
+    "version": "4.0.1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SMART",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read Capability Statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata"
+          },
+          "docs": "Returns the FHIR CapabilityStatement describing supported resources, interactions, and security."
+        },
+        {
+          "info": {
+            "name": "Read SMART Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/.well-known/smart-configuration"
+          },
+          "docs": "SMART on FHIR discovery document advertising OAuth endpoints, scopes, and capabilities."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Patient Access",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read Patient",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Patient/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Read Patient"
+        },
+        {
+          "info": {
+            "name": "Search Patient",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Patient",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "_count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Patient"
+        },
+        {
+          "info": {
+            "name": "Search Allergy Intolerance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/AllergyIntolerance",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Allergy Intolerance"
+        },
+        {
+          "info": {
+            "name": "Search Condition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Condition",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Condition"
+        },
+        {
+          "info": {
+            "name": "Search Observation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Observation",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Observation"
+        },
+        {
+          "info": {
+            "name": "Search Medication Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/MedicationRequest",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Medication Request"
+        },
+        {
+          "info": {
+            "name": "Search Immunization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Immunization",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Immunization"
+        },
+        {
+          "info": {
+            "name": "Search Procedure",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Procedure",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Procedure"
+        },
+        {
+          "info": {
+            "name": "Search Encounter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Encounter",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Encounter"
+        },
+        {
+          "info": {
+            "name": "Search Diagnostic Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/DiagnosticReport",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Diagnostic Report"
+        },
+        {
+          "info": {
+            "name": "Search Document Reference",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/DocumentReference",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Document Reference"
+        },
+        {
+          "info": {
+            "name": "Search Coverage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Coverage",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Coverage"
+        },
+        {
+          "info": {
+            "name": "Search Explanation of Benefit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/ExplanationOfBenefit",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Explanation of Benefit"
+        },
+        {
+          "info": {
+            "name": "Search Claim",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Claim",
+            "params": [
+              {
+                "name": "patient",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Claim"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Provider Directory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Practitioner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Practitioner",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Practitioner"
+        },
+        {
+          "info": {
+            "name": "Search Practitioner Role",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/PractitionerRole",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "specialty",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Practitioner Role"
+        },
+        {
+          "info": {
+            "name": "Search Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Organization",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Organization"
+        },
+        {
+          "info": {
+            "name": "Search Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Location",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Location"
+        },
+        {
+          "info": {
+            "name": "Search Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Endpoint",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Endpoint"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Bulk Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export Group Bulk Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Group/:id/$export",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Initiates a Bulk Data (Flat FHIR) export for a Group of patients per\nHL7 FHIR Bulk Data Access IG. Requires client_credentials authentication and the\n`system/*.read` scope. Status is polled at the Content-Location URL.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

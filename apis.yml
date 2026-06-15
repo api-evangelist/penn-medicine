@@ -1,8 +1,21 @@
 name: Penn Medicine
-description: |
-  Penn Medicine is the University of Pennsylvania Health System (UPHS) plus the Perelman School of Medicine. It is an $11.9 billion enterprise powered by nearly 49,000 faculty and staff, operating six hospitals (Hospital of the University of Pennsylvania, Penn Presbyterian Medical Center, Chester County Hospital, Lancaster General Health, Princeton Health, and Pennsylvania Hospital — the first hospital in the United States, chartered in 1751) plus Penn Medicine at Home, Good Shepherd Penn Partners Rehabilitation, Lancaster Behavioral Health Hospital, and Princeton House Behavioral Health. The Perelman School of Medicine was awarded $580 million in NIH funding in fiscal year 2023.
+description: >
+  Penn Medicine is the University of Pennsylvania Health System (UPHS) plus the Perelman School of Medicine. It is an
+  $11.9 billion enterprise powered by nearly 49,000 faculty and staff, operating six hospitals (Hospital of the
+  University of Pennsylvania, Penn Presbyterian Medical Center, Chester County Hospital, Lancaster General Health,
+  Princeton Health, and Pennsylvania Hospital — the first hospital in the United States, chartered in 1751) plus Penn
+  Medicine at Home, Good Shepherd Penn Partners Rehabilitation, Lancaster Behavioral Health Hospital, and Princeton
+  House Behavioral Health. The Perelman School of Medicine was awarded $580 million in NIH funding in fiscal year 2023.
 
-  From an API perspective, Penn Medicine runs a production Epic-backed HL7 FHIR R4 endpoint at `https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4` (Epic Organization ID 346, implementation description "University of Pennsylvania Health Systems FHIR Server"). The CapabilityStatement instantiates `us-core-server|6.1.0` and the HL7 Bulk Data Access IG, exposes 59 FHIR resource types covering Patient Access (clinical + claims) and Provider Directory per CMS-9115-F, and protects them with OAuth 2.0 / SMART-on-FHIR. Penn Medicine also operates the MyPennMedicine MyChart patient portal and the PhysicianLink referring-provider portal, and publishes open-source informatics work through several Perelman School of Medicine GitHub orgs (Penn-Medicine-CHCI, pennsignals, PMACS, pennbiobank).
+
+  From an API perspective, Penn Medicine runs a production Epic-backed HL7 FHIR R4 endpoint at
+  `https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4` (Epic Organization ID 346, implementation description
+  "University of Pennsylvania Health Systems FHIR Server"). The CapabilityStatement instantiates `us-core-server|6.1.0`
+  and the HL7 Bulk Data Access IG, exposes 59 FHIR resource types covering Patient Access (clinical + claims) and
+  Provider Directory per CMS-9115-F, and protects them with OAuth 2.0 / SMART-on-FHIR. Penn Medicine also operates the
+  MyPennMedicine MyChart patient portal and the PhysicianLink referring-provider portal, and publishes open-source
+  informatics work through several Perelman School of Medicine GitHub orgs (Penn-Medicine-CHCI, pennsignals, PMACS,
+  pennbiobank).
 url: https://github.com/api-evangelist/penn-medicine
 image: https://www.pennmedicine.org/-/media/global/global-logo.svg
 created: '2026-05-23'
@@ -20,7 +33,6 @@ tags:
   - US Core
   - Bulk Data
   - Epic
-
 apis:
   - name: Penn Medicine FHIR R4 API
     description: |
@@ -69,7 +81,6 @@ apis:
         url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
       - type: Sandbox
         url: https://fhir.epic.com/Documentation?docId=testpatients
-
   - name: MyPennMedicine Patient Portal
     description: |
       MyChart-based patient portal that gives Penn Medicine patients access to medical records, lab
@@ -87,7 +98,6 @@ apis:
         url: https://secure.mypennmedicine.org/
       - type: Documentation
         url: https://www.pennmedicine.org/patient-resources/mypennmedicine
-
   - name: PhysicianLink Referring Physician Portal
     description: |
       EpicLink-based portal for community and referring physicians that provides secure access to Penn
@@ -103,8 +113,8 @@ apis:
       - type: Portal
         url: https://secure3.pennmedicine.org/EpicLink/common/epic_login.asp
       - type: Documentation
-        url: https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink
-
+        url: >-
+          https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink
   - name: Penn Medicine Open Source Health Informatics
     description: |
       Penn Medicine and the Perelman School of Medicine publish open-source health-informatics software
@@ -139,7 +149,6 @@ apis:
         url: https://github.com/Penn-Medicine-CHCI/cobalt-api
       - type: GitHubRepository
         url: https://github.com/Penn-Medicine-CHCI/cobalt-web
-
 common:
   - type: Portal
     url: https://www.pennmedicine.org
@@ -166,14 +175,6 @@ common:
     url: https://www.linkedin.com/company/penn-medicine
   - type: SpectralRules
     url: rules/penn-medicine-fhir-rules.yml
-  - type: NaftikoCapability
-    url: capabilities/shared/penn-medicine-fhir-r4.yaml
-  - type: NaftikoCapability
-    url: capabilities/patient-access.yaml
-  - type: NaftikoCapability
-    url: capabilities/provider-directory.yaml
-  - type: NaftikoCapability
-    url: capabilities/bulk-cohort-export.yaml
   - type: JSONLD
     url: json-ld/penn-medicine-context.jsonld
   - type: Vocabulary
@@ -187,13 +188,18 @@ common:
   - type: Features
     data:
       - name: CMS-Compliant Patient Access FHIR API
-        description: HL7 FHIR R4 server with US Core 6.1.0 conformance and SMART on FHIR authorization, fulfilling CMS-9115-F Patient Access requirements.
+        description: >-
+          HL7 FHIR R4 server with US Core 6.1.0 conformance and SMART on FHIR authorization, fulfilling CMS-9115-F
+          Patient Access requirements.
       - name: Public Provider Directory
         description: Unauthenticated FHIR resources for Practitioner, PractitionerRole, Organization, Location, and Endpoint.
       - name: HL7 Bulk Data Access
         description: Group-level $export per the HL7 Bulk Data IG; supports backend services (client_credentials) authentication.
       - name: 59 FHIR Resource Types
-        description: CapabilityStatement advertises 59 resource types covering clinical, administrative, and financial data including AllergyIntolerance, Condition, Observation, MedicationRequest, Immunization, Procedure, Encounter, DiagnosticReport, DocumentReference, Coverage, ExplanationOfBenefit, and Claim.
+        description: >-
+          CapabilityStatement advertises 59 resource types covering clinical, administrative, and financial data
+          including AllergyIntolerance, Condition, Observation, MedicationRequest, Immunization, Procedure, Encounter,
+          DiagnosticReport, DocumentReference, Coverage, ExplanationOfBenefit, and Claim.
       - name: MyPennMedicine Patient Portal
         description: MyChart-based portal that fronts the FHIR surface for patients and their authorized apps.
       - name: PhysicianLink for Referring Providers
@@ -201,13 +207,21 @@ common:
   - type: UseCases
     data:
       - name: Patient-Mediated Data Download
-        description: Patients authorize third-party PHR and care-coordination apps to pull their complete clinical and claims history from Penn Medicine via SMART on FHIR.
+        description: >-
+          Patients authorize third-party PHR and care-coordination apps to pull their complete clinical and claims
+          history from Penn Medicine via SMART on FHIR.
       - name: Care-Coordination Apps
-        description: Approved EHR-launched and standalone SMART apps surface Penn Medicine clinical data inside referring-provider, payer, and longitudinal-care tools.
+        description: >-
+          Approved EHR-launched and standalone SMART apps surface Penn Medicine clinical data inside referring-provider,
+          payer, and longitudinal-care tools.
       - name: Population Analytics
-        description: Approved system-level clients run Group-level $export to extract de-identified cohorts for quality measurement, research, and risk modeling.
+        description: >-
+          Approved system-level clients run Group-level $export to extract de-identified cohorts for quality
+          measurement, research, and risk modeling.
       - name: Provider Directory Distribution
-        description: Payers, referral platforms, and health information exchanges consume the public Provider Directory bundle without authentication.
+        description: >-
+          Payers, referral platforms, and health information exchanges consume the public Provider Directory bundle
+          without authentication.
       - name: Referring Provider EMR Access
         description: PhysicianLink gives credentialed community physicians read access to UPHS records for shared patients.
   - type: Integrations
@@ -223,7 +237,9 @@ common:
       - name: HL7 US Core 6.1.0
         description: CapabilityStatement instantiates us-core-server profile.
       - name: Apple Health
-        description: Penn Medicine participated in Apple's 2018 launch of Health Records on iPhone, allowing patients to view FHIR-formatted records.
+        description: >-
+          Penn Medicine participated in Apple's 2018 launch of Health Records on iPhone, allowing patients to view
+          FHIR-formatted records.
       - name: Carequality
         description: National interoperability framework Penn Medicine participates in for record retrieval across networks.
       - name: Care Everywhere
@@ -238,7 +254,6 @@ common:
         description: Population-scale FHIR data extraction for approved partners.
       - name: Connected Mental Health (Cobalt)
         description: Open-source Cobalt platform from Penn Medicine CHCI delivering employee mental health and well-being services.
-
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
