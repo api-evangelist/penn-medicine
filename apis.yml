@@ -67,15 +67,15 @@ apis:
         url: json-schema/penn-medicine-fhir-practitioner-schema.json
       - type: JSONSchema
         url: json-schema/penn-medicine-fhir-observation-schema.json
-      - type: Example
+      - type: Examples
         url: examples/penn-medicine-fhir-patient-example.json
-      - type: Example
+      - type: Examples
         url: examples/penn-medicine-fhir-organization-example.json
-      - type: Example
+      - type: Examples
         url: examples/penn-medicine-fhir-practitioner-example.json
-      - type: Example
+      - type: Examples
         url: examples/penn-medicine-fhir-observation-example.json
-      - type: Example
+      - type: Examples
         url: examples/penn-medicine-fhir-bulk-export-example.json
       - type: Authentication
         url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
