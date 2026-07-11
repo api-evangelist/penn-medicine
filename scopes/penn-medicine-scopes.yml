@@ -1,0 +1,49 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/penn-medicine-fhir-r4-openapi.yml
+schemes:
+- name: smartOnFhir
+  source: openapi/penn-medicine-fhir-r4-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+    tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+  - flow: clientCredentials
+    tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+scopes:
+- scope: fhirUser
+  description: Current FHIR user identity
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml
+- scope: launch
+  description: SMART app launch context
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml
+- scope: offline_access
+  description: Refresh token issuance
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml
+- scope: openid
+  description: OpenID Connect
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml
+- scope: profile
+  description: User profile claims
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml
+- scope: system/*.read
+  description: System-level read of all resources (Bulk Data)
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml
