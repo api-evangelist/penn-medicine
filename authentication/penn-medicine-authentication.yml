@@ -1,0 +1,22 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/penn-medicine-fhir-r4-openapi.yml
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  - clientCredentials
+schemes:
+- name: smartOnFhir
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+    tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+    scopes: 5
+  - flow: clientCredentials
+    tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+    scopes: 1
+  sources:
+  - openapi/penn-medicine-fhir-r4-openapi.yml

@@ -150,6 +150,8 @@ apis:
       - type: GitHubRepository
         url: https://github.com/Penn-Medicine-CHCI/cobalt-web
 common:
+  - type: DomainSecurity
+    url: security/penn-medicine-domain-security.yml
   - type: Authentication
     url: authentication/penn-medicine-authentication.yml
   - type: OAuthScopes
