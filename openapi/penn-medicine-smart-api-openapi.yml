@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Penn Medicine FHIR R4 Bulk Data SMART API
+  description: 'The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4
+
+    implementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader
+
+    SMART on FHIR clinical resources. It conforms to US Core 6.1.0 and the HL7 FHIR Bulk Data Access
+
+    (Flat FHIR) capability statement.
+
+
+    Software: Epic (November 2025 release, released 2026-03-19).
+
+
+    Authorization is OAuth 2.0 / SMART-on-FHIR (authorization code, refresh token, client credentials,
+
+    JWT bearer). App registration is performed through Epic on FHIR (https://fhir.epic.com) by
+
+    selecting Penn Medicine (Organization ID 346) as the target endpoint.
+
+    '
+  version: 4.0.1
+  contact:
+    name: Penn Medicine FHIR API
+    url: https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  license:
+    name: Epic FHIR Terms of Use
+    url: https://fhir.epic.com
+servers:
+- url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
+  description: Penn Medicine FHIR R4 production endpoint (UPHS SecureSign Proxy)
+security:
+- smartOnFhir: []
+tags:
+- name: SMART
+  description: SMART on FHIR launch and discovery endpoints.
+paths:
+  /metadata:
+    get:
+      tags:
+      - SMART
+      summary: Read Capability Statement
+      description: Returns the FHIR CapabilityStatement describing supported resources, interactions, and security.
+      operationId: getCapabilityStatement
+      responses:
+        '200':
+          description: CapabilityStatement
+          content:
+            application/fhir+json: {}
+  /.well-known/smart-configuration:
+    get:
+      tags:
+      - SMART
+      summary: Read SMART Configuration
+      description: SMART on FHIR discovery document advertising OAuth endpoints, scopes, and capabilities.
+      operationId: getSmartConfiguration
+      responses:
+        '200':
+          description: SMART configuration document
+          content:
+            application/json: {}
+components:
+  securitySchemes:
+    smartOnFhir:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+          tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+          scopes:
+            launch: SMART app launch context
+            openid: OpenID Connect
+            fhirUser: Current FHIR user identity
+            profile: User profile claims
+            offline_access: Refresh token issuance
+        clientCredentials:
+          tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+          scopes:
+            system/*.read: System-level read of all resources (Bulk Data)

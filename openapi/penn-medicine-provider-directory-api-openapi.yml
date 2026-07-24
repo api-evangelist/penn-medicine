@@ -1,0 +1,146 @@
+openapi: 3.1.0
+info:
+  title: Penn Medicine FHIR R4 Bulk Data Provider Directory API
+  description: 'The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4
+
+    implementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader
+
+    SMART on FHIR clinical resources. It conforms to US Core 6.1.0 and the HL7 FHIR Bulk Data Access
+
+    (Flat FHIR) capability statement.
+
+
+    Software: Epic (November 2025 release, released 2026-03-19).
+
+
+    Authorization is OAuth 2.0 / SMART-on-FHIR (authorization code, refresh token, client credentials,
+
+    JWT bearer). App registration is performed through Epic on FHIR (https://fhir.epic.com) by
+
+    selecting Penn Medicine (Organization ID 346) as the target endpoint.
+
+    '
+  version: 4.0.1
+  contact:
+    name: Penn Medicine FHIR API
+    url: https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  license:
+    name: Epic FHIR Terms of Use
+    url: https://fhir.epic.com
+servers:
+- url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
+  description: Penn Medicine FHIR R4 production endpoint (UPHS SecureSign Proxy)
+security:
+- smartOnFhir: []
+tags:
+- name: Provider Directory
+  description: Public provider, organization, location, and endpoint resources required under CMS-9115-F.
+paths:
+  /Practitioner:
+    get:
+      tags:
+      - Provider Directory
+      summary: Search Practitioner
+      operationId: searchPractitioner
+      parameters:
+      - $ref: '#/components/parameters/_id'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: Bundle of Practitioner resources
+          content:
+            application/fhir+json: {}
+  /PractitionerRole:
+    get:
+      tags:
+      - Provider Directory
+      summary: Search Practitioner Role
+      operationId: searchPractitionerRole
+      parameters:
+      - $ref: '#/components/parameters/_id'
+      - $ref: '#/components/parameters/specialty'
+      responses:
+        '200':
+          description: Bundle of PractitionerRole resources
+          content:
+            application/fhir+json: {}
+  /Organization:
+    get:
+      tags:
+      - Provider Directory
+      summary: Search Organization
+      operationId: searchOrganization
+      parameters:
+      - $ref: '#/components/parameters/_id'
+      - $ref: '#/components/parameters/name'
+      responses:
+        '200':
+          description: Bundle of Organization resources
+          content:
+            application/fhir+json: {}
+  /Location:
+    get:
+      tags:
+      - Provider Directory
+      summary: Search Location
+      operationId: searchLocation
+      parameters:
+      - $ref: '#/components/parameters/_id'
+      - $ref: '#/components/parameters/address'
+      responses:
+        '200':
+          description: Bundle of Location resources
+          content:
+            application/fhir+json: {}
+  /Endpoint:
+    get:
+      tags:
+      - Provider Directory
+      summary: Search Endpoint
+      operationId: searchEndpoint
+      parameters:
+      - $ref: '#/components/parameters/_id'
+      responses:
+        '200':
+          description: Bundle of Endpoint resources
+          content:
+            application/fhir+json: {}
+components:
+  parameters:
+    specialty:
+      name: specialty
+      in: query
+      schema:
+        type: string
+    address:
+      name: address
+      in: query
+      schema:
+        type: string
+    name:
+      name: name
+      in: query
+      schema:
+        type: string
+    _id:
+      name: _id
+      in: query
+      schema:
+        type: string
+  securitySchemes:
+    smartOnFhir:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+          tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+          scopes:
+            launch: SMART app launch context
+            openid: OpenID Connect
+            fhirUser: Current FHIR user identity
+            profile: User profile claims
+            offline_access: Refresh token issuance
+        clientCredentials:
+          tokenUrl: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token
+          scopes:
+            system/*.read: System-level read of all resources (Bulk Data)
