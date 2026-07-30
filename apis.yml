@@ -17,6 +17,19 @@ description: >
   informatics work through several Perelman School of Medicine GitHub orgs (Penn-Medicine-CHCI, pennsignals, PMACS,
   pennbiobank).
 url: https://github.com/api-evangelist/penn-medicine
+accessModel:
+  pricing: enterprise
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://www.pennmedicine.org/-/media/global/global-logo.svg
 created: '2026-05-23'
 modified: '2026-05-23'
@@ -34,121 +47,239 @@ tags:
   - Bulk Data
   - Epic
 apis:
-  - name: Penn Medicine FHIR R4 API
-    description: |
-      The University of Pennsylvania Health Systems FHIR Server. Epic (November 2025) on the back end,
-      conforming to US Core 6.1.0 and the HL7 Bulk Data Access IG. Serves Patient Access (clinical + claims)
-      and Provider Directory data per CMS-9115-F, exposing 59 FHIR resource types including Patient,
-      AllergyIntolerance, Condition, Observation, MedicationRequest, Immunization, Procedure, Encounter,
-      DiagnosticReport, DocumentReference, Coverage, ExplanationOfBenefit, Claim, Practitioner,
-      PractitionerRole, Organization, Location, and Endpoint. App registration is performed through
-      Epic on FHIR (https://fhir.epic.com) by selecting Penn Medicine (Organization ID 346) as the target.
-    humanURL: https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
-    baseURL: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
-    tags:
-      - FHIR
-      - SMART On FHIR
-      - Patient Access
-      - Provider Directory
-      - Bulk Data
-      - US Core
-    properties:
-      - type: Documentation
-        url: https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
-      - type: APIReference
-        url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata
-      - type: OpenAPI
-        url: openapi/penn-medicine-fhir-r4-openapi.yml
-      - type: JSONSchema
-        url: json-schema/penn-medicine-fhir-patient-schema.json
-      - type: JSONSchema
-        url: json-schema/penn-medicine-fhir-organization-schema.json
-      - type: JSONSchema
-        url: json-schema/penn-medicine-fhir-practitioner-schema.json
-      - type: JSONSchema
-        url: json-schema/penn-medicine-fhir-observation-schema.json
-      - type: Examples
-        url: examples/penn-medicine-fhir-patient-example.json
-      - type: Examples
-        url: examples/penn-medicine-fhir-organization-example.json
-      - type: Examples
-        url: examples/penn-medicine-fhir-practitioner-example.json
-      - type: Examples
-        url: examples/penn-medicine-fhir-observation-example.json
-      - type: Examples
-        url: examples/penn-medicine-fhir-bulk-export-example.json
-      - type: Authentication
-        url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
-      - type: Sandbox
-        url: https://fhir.epic.com/Documentation?docId=testpatients
-  - name: MyPennMedicine Patient Portal
-    description: |
-      MyChart-based patient portal that gives Penn Medicine patients access to medical records, lab
-      results, secure messaging with their care team, telehealth visits, medication refills, prescription
-      management, bill pay, and appointment scheduling across UPHS facilities. SMART apps approved via
-      Epic on FHIR connect to the underlying Penn Medicine FHIR R4 API.
-    humanURL: https://www.pennmedicine.org/patient-resources/mypennmedicine
-    baseURL: https://secure.mypennmedicine.org
-    tags:
-      - Patient Portal
-      - MyChart
-      - Patient Access
-    properties:
-      - type: Portal
-        url: https://secure.mypennmedicine.org/
-      - type: Documentation
-        url: https://www.pennmedicine.org/patient-resources/mypennmedicine
-  - name: PhysicianLink Referring Physician Portal
-    description: |
-      EpicLink-based portal for community and referring physicians that provides secure access to Penn
-      Medicine patient records: clinical notes, lab and imaging results, medication lists, and the
-      ability to refer patients and follow care for shared patients.
-    humanURL: https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink
-    baseURL: https://secure3.pennmedicine.org/EpicLink
-    tags:
-      - Referring Provider
-      - EMR Access
-      - Epic
-    properties:
-      - type: Portal
-        url: https://secure3.pennmedicine.org/EpicLink/common/epic_login.asp
-      - type: Documentation
-        url: >-
-          https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink
-  - name: Penn Medicine Open Source Health Informatics
-    description: |
-      Penn Medicine and the Perelman School of Medicine publish open-source health-informatics software
-      across several GitHub organizations: Penn Medicine Center for Health Care Innovation
-      (Penn-Medicine-CHCI, behind the Cobalt mental-health platform — cobalt-api in Java and cobalt-web
-      in TypeScript); Penn Signals / Penn Medicine Predictive Healthcare (pennsignals — Databricks
-      MCP agent templates; historically the home of CHIME, the COVID-19 Hospital Impact Model); Penn
-      Medicine Academic Computing Services (PMACS — 17 Rails libraries, JSON:API tools, Oracle adapters,
-      and Slate API docs); and the Penn Medicine BioBank (pennbiobank).
-    humanURL: https://github.com/pennmedicine
-    tags:
-      - Open Source
-      - Health Informatics
-      - GitHub
-    properties:
-      - type: GitHubOrganization
-        url: https://github.com/Penn-Medicine-CHCI
-        name: Penn Medicine Center for Health Care Innovation
-      - type: GitHubOrganization
-        url: https://github.com/pennsignals
-        name: Penn Signals / Predictive Healthcare
-      - type: GitHubOrganization
-        url: https://github.com/PMACS
-        name: Penn Medicine Academic Computing Services
-      - type: GitHubOrganization
-        url: https://github.com/pennbiobank
-        name: Penn Medicine BioBank
-      - type: GitHubOrganization
-        url: https://github.com/pennmedicine
-        name: Penn Medicine (canonical org)
-      - type: GitHubRepository
-        url: https://github.com/Penn-Medicine-CHCI/cobalt-api
-      - type: GitHubRepository
-        url: https://github.com/Penn-Medicine-CHCI/cobalt-web
+- name: MyPennMedicine Patient Portal
+  description: >
+    MyChart-based patient portal that gives Penn Medicine patients access to medical records, lab
+
+    results, secure messaging with their care team, telehealth visits, medication refills, prescription
+
+    management, bill pay, and appointment scheduling across UPHS facilities. SMART apps approved via
+
+    Epic on FHIR connect to the underlying Penn Medicine FHIR R4 API.
+  humanURL: https://www.pennmedicine.org/patient-resources/mypennmedicine
+  baseURL: https://secure.mypennmedicine.org
+  tags:
+  - Patient Portal
+  - MyChart
+  - Patient Access
+  properties:
+  - type: Portal
+    url: https://secure.mypennmedicine.org/
+  - type: Documentation
+    url: https://www.pennmedicine.org/patient-resources/mypennmedicine
+- name: PhysicianLink Referring Physician Portal
+  description: >
+    EpicLink-based portal for community and referring physicians that provides secure access to Penn
+
+    Medicine patient records: clinical notes, lab and imaging results, medication lists, and the
+
+    ability to refer patients and follow care for shared patients.
+  humanURL: >-
+    https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink
+  baseURL: https://secure3.pennmedicine.org/EpicLink
+  tags:
+  - Referring Provider
+  - EMR Access
+  - Epic
+  properties:
+  - type: Portal
+    url: https://secure3.pennmedicine.org/EpicLink/common/epic_login.asp
+  - type: Documentation
+    url: >-
+      https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink
+- name: Penn Medicine Open Source Health Informatics
+  description: >
+    Penn Medicine and the Perelman School of Medicine publish open-source health-informatics software
+
+    across several GitHub organizations: Penn Medicine Center for Health Care Innovation
+
+    (Penn-Medicine-CHCI, behind the Cobalt mental-health platform — cobalt-api in Java and cobalt-web
+
+    in TypeScript); Penn Signals / Penn Medicine Predictive Healthcare (pennsignals — Databricks
+
+    MCP agent templates; historically the home of CHIME, the COVID-19 Hospital Impact Model); Penn
+
+    Medicine Academic Computing Services (PMACS — 17 Rails libraries, JSON:API tools, Oracle adapters,
+
+    and Slate API docs); and the Penn Medicine BioBank (pennbiobank).
+  humanURL: https://github.com/pennmedicine
+  tags:
+  - Open Source
+  - Health Informatics
+  - GitHub
+  properties:
+  - type: GitHubOrganization
+    url: https://github.com/Penn-Medicine-CHCI
+    name: Penn Medicine Center for Health Care Innovation
+  - type: GitHubOrganization
+    url: https://github.com/pennsignals
+    name: Penn Signals / Predictive Healthcare
+  - type: GitHubOrganization
+    url: https://github.com/PMACS
+    name: Penn Medicine Academic Computing Services
+  - type: GitHubOrganization
+    url: https://github.com/pennbiobank
+    name: Penn Medicine BioBank
+  - type: GitHubOrganization
+    url: https://github.com/pennmedicine
+    name: Penn Medicine (canonical org)
+  - type: GitHubRepository
+    url: https://github.com/Penn-Medicine-CHCI/cobalt-api
+  - type: GitHubRepository
+    url: https://github.com/Penn-Medicine-CHCI/cobalt-web
+- aid: penn-medicine:penn-medicine-bulk-data-api
+  name: Penn Medicine Bulk Data API
+  description: HL7 FHIR Bulk Data Access (Flat FHIR) Group-level export.
+  humanURL: >-
+    https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  baseURL: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
+  tags:
+  - Bulk Data
+  properties:
+  - type: OpenAPI
+    url: openapi/penn-medicine-bulk-data-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  - type: APIReference
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-observation-schema.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-patient-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-organization-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-practitioner-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-observation-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-bulk-export-example.json
+  - type: Authentication
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+  - type: Sandbox
+    url: https://fhir.epic.com/Documentation?docId=testpatients
+- aid: penn-medicine:penn-medicine-patient-access-api
+  name: Penn Medicine Patient Access API
+  description: Patient-mediated clinical and claims data resources required under CMS-9115-F.
+  humanURL: >-
+    https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  baseURL: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
+  tags:
+  - Patient Access
+  properties:
+  - type: OpenAPI
+    url: openapi/penn-medicine-patient-access-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  - type: APIReference
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-observation-schema.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-patient-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-organization-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-practitioner-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-observation-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-bulk-export-example.json
+  - type: Authentication
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+  - type: Sandbox
+    url: https://fhir.epic.com/Documentation?docId=testpatients
+- aid: penn-medicine:penn-medicine-provider-directory-api
+  name: Penn Medicine Provider Directory API
+  description: >-
+    Public provider, organization, location, and endpoint resources required under CMS-9115-F.
+  humanURL: >-
+    https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  baseURL: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
+  tags:
+  - Provider Directory
+  properties:
+  - type: OpenAPI
+    url: openapi/penn-medicine-provider-directory-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  - type: APIReference
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-observation-schema.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-patient-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-organization-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-practitioner-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-observation-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-bulk-export-example.json
+  - type: Authentication
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+  - type: Sandbox
+    url: https://fhir.epic.com/Documentation?docId=testpatients
+- aid: penn-medicine:penn-medicine-smart-api
+  name: Penn Medicine SMART API
+  description: SMART on FHIR launch and discovery endpoints.
+  humanURL: >-
+    https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  baseURL: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4
+  tags:
+  - SMART
+  properties:
+  - type: OpenAPI
+    url: openapi/penn-medicine-smart-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records
+  - type: APIReference
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-patient-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-organization-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-practitioner-schema.json
+  - type: JSONSchema
+    url: json-schema/penn-medicine-fhir-observation-schema.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-patient-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-organization-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-practitioner-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-observation-example.json
+  - type: Examples
+    url: examples/penn-medicine-fhir-bulk-export-example.json
+  - type: Authentication
+    url: https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize
+  - type: Sandbox
+    url: https://fhir.epic.com/Documentation?docId=testpatients
 common:
   - type: AgenticAccess
     url: agentic-access/penn-medicine-agentic-access.yml
