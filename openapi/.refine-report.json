@@ -1,0 +1,20 @@
+{
+  "provider": "penn-medicine",
+  "sources": [
+    "penn-medicine-bulk-data-api-openapi.yml",
+    "penn-medicine-patient-access-api-openapi.yml",
+    "penn-medicine-provider-directory-api-openapi.yml",
+    "penn-medicine-smart-api-openapi.yml"
+  ],
+  "outputs": [
+    "penn-medicine-bulk-data-api-openapi.yml",
+    "penn-medicine-patient-access-api-openapi.yml",
+    "penn-medicine-provider-directory-api-openapi.yml",
+    "penn-medicine-smart-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
