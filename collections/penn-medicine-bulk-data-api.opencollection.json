@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Penn Medicine FHIR R4 Bulk Data API",
+    "version": "4.0.1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bulk Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export Group Bulk Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Group/:id/$export",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Initiates a Bulk Data (Flat FHIR) export for a Group of patients per\nHL7 FHIR Bulk Data Access IG. Requires client_credentials authentication and the\n`system/*.read` scope. Status is polled at the Content-Location URL.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

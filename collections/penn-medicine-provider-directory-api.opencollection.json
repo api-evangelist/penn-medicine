@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Penn Medicine FHIR R4 Bulk Data Provider Directory API",
+    "version": "4.0.1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Provider Directory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Practitioner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Practitioner",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Practitioner"
+        },
+        {
+          "info": {
+            "name": "Search Practitioner Role",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/PractitionerRole",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "specialty",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Practitioner Role"
+        },
+        {
+          "info": {
+            "name": "Search Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Organization",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Organization"
+        },
+        {
+          "info": {
+            "name": "Search Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Location",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Location"
+        },
+        {
+          "info": {
+            "name": "Search Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/Endpoint",
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Endpoint"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

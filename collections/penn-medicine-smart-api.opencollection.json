@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Penn Medicine FHIR R4 Bulk Data SMART API",
+    "version": "4.0.1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SMART",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read Capability Statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata"
+          },
+          "docs": "Returns the FHIR CapabilityStatement describing supported resources, interactions, and security."
+        },
+        {
+          "info": {
+            "name": "Read SMART Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/.well-known/smart-configuration"
+          },
+          "docs": "SMART on FHIR discovery document advertising OAuth endpoints, scopes, and capabilities."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "62cf8c60-470c-4612-8c1a-ba7c1ff9074b",
+      "name": "Bulk Data",
+      "description": {
+        "content": "HL7 FHIR Bulk Data Access (Flat FHIR) Group-level export.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff68ecd9-b05c-4b6d-9ff5-d8c9c78c7fe3",
+          "name": "Export Group Bulk Data",
+          "request": {
+            "name": "Export Group Bulk Data",
+            "description": {
+              "content": "Initiates a Bulk Data (Flat FHIR) export for a Group of patients per\nHL7 FHIR Bulk Data Access IG. Requires client_credentials authentication and the\n`system/*.read` scope. Status is polled at the Content-Location URL.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Group",
+                ":id",
+                "$export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "_type",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4729397e-a0bb-4795-a10b-5343b4cb5294",
+              "name": "Export accepted; poll Content-Location header for status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Group",
+                    ":id",
+                    "$export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "launch openid fhirUser profile offline_access"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "26d24179-c906-4b3b-8563-cc5720d3bfa2",
+    "name": "Penn Medicine FHIR R4 Bulk Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4\nimplementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader\nSMART on FHIR clinical resources. It conforms to US Core 6.1.0 and the HL7 FHIR Bulk Data Access\n(Flat FHIR) capability statement.\n\nSoftware: Epic (November 2025 release, released 2026-03-19).\n\nAuthorization is OAuth 2.0 / SMART-on-FHIR (authorization code, refresh token, client credentials,\nJWT bearer). App registration is performed through Epic on FHIR (https://fhir.epic.com) by\nselecting Penn Medicine (Organization ID 346) as the target endpoint.\n\n\nContact Support:\n Name: Penn Medicine FHIR API",
+      "type": "text/plain"
+    }
+  }
+}
