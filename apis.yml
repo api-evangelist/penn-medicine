@@ -33,7 +33,7 @@ accessModel:
 image: https://www.pennmedicine.org/-/media/global/global-logo.svg
 created: '2026-05-23'
 modified: '2026-05-23'
-specificationVersion: '0.18'
+specificationVersion: '0.23'
 tags:
   - Healthcare
   - Hospital
