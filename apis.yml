@@ -39,6 +39,18 @@ tags:
   - Hospital
   - Academic Medical Center
   - FHIR
+  - SMART on FHIR
+  - Patient Access
+  - Provider Directory
+  - CMS Interoperability
+  - US Core
+  - Bulk Data
+  - Epic
+tags_raw:
+  - Healthcare
+  - Hospital
+  - Academic Medical Center
+  - FHIR
   - SMART On FHIR
   - Patient Access
   - Provider Directory
@@ -104,6 +116,10 @@ apis:
     and Slate API docs); and the Penn Medicine BioBank (pennbiobank).
   humanURL: https://github.com/pennmedicine
   tags:
+  - Open-Source
+  - Health Informatics
+  - GitHub
+  tags_raw:
   - Open Source
   - Health Informatics
   - GitHub
