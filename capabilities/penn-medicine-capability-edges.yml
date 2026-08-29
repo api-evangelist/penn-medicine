@@ -18,30 +18,31 @@ edges:
   capability_id: BC-2900.60
   capability_id_l1: BC-2900
   capability_name: Healthcare Interoperability Operations
-  confidence: 0.85
-  evidence: GET /Group/{id}/$export "Export Group Bulk Data" ... "HL7 FHIR Bulk Data Access (Flat FHIR)
-    capability statement"
-  reason: FHIR bulk export endpoint operated by a health system to share health records with external
-    applications — health information exchange / FHIR endpoint operation.
+  confidence: 0.8
+  evidence: GET /Group/{id}/$export  Export Group Bulk Data; "conforms to US Core 6.1.0 and the HL7 FHIR
+    Bulk Data Access (Flat FHIR) capability statement"
+  reason: A provider-operated FHIR server exposing bulk export of patient cohorts is health information
+    exchange / FHIR endpoint operation, i.e. healthcare interoperability operations run by the health
+    system.
 - tag: Patient Access
   spec_file: penn-medicine-patient-access-api-openapi.yml
   capability_id: BC-2900.60
   capability_id_l1: BC-2900
   capability_name: Healthcare Interoperability Operations
-  confidence: 0.85
-  evidence: '"CMS-mandated Patient Access and Provider Directory data" with "Search Condition", "Search
-    MedicationRequest", "Search Coverage"'
-  reason: Provider-operated FHIR R4 API exposing clinical records to patient-authorised apps under the
-    CMS Patient Access rule — this is healthcare interoperability operations (FHIR endpoints, patient-initiated
-    data sharing) rather than the clinical documentation workflow itself.
+  confidence: 0.8
+  evidence: '"exposing CMS-mandated Patient Access and Provider Directory data"; GET /Patient  searchPatient;
+    GET /DiagnosticReport  searchDiagnosticReport'
+  reason: These are the health system's CMS Patient Access FHIR APIs — patient-initiated sharing of clinical
+    records to third-party apps, which is interoperability operations rather than direct care delivery
+    or portal product management.
 - tag: Provider Directory
   spec_file: penn-medicine-provider-directory-api-openapi.yml
   capability_id: BC-2900.60
   capability_id_l1: BC-2900
   capability_name: Healthcare Interoperability Operations
   confidence: 0.75
-  evidence: '"Search Practitioner", "Search PractitionerRole", "Search Organization", "Search Endpoint"
-    ... "CMS-mandated ... Provider Directory data"'
-  reason: 'Publishing practitioner, organisation, location and FHIR endpoint directory data through the
-    health system''s FHIR server — interoperability operations. Not credentialing: no verification or
-    privileging operations appear.'
+  evidence: GET /Practitioner  searchPractitioner; GET /Endpoint  searchEndpoint; "CMS-mandated Patient
+    Access and Provider Directory data"
+  reason: Publishing Practitioner/PractitionerRole/Organization/Location/Endpoint over FHIR is the regulator-mandated
+    provider directory interoperability surface, which the interoperability-operations sub-capability
+    explicitly covers. It is not credentialing (no verification or privileging operations).
