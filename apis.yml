@@ -17,6 +17,19 @@ description: >
   informatics work through several Perelman School of Medicine GitHub orgs (Penn-Medicine-CHCI, pennsignals, PMACS,
   pennbiobank).
 url: https://github.com/api-evangelist/penn-medicine
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: self-serve
@@ -297,6 +310,10 @@ apis:
   - type: Sandbox
     url: https://fhir.epic.com/Documentation?docId=testpatients
 common:
+  - type: IssueTracker
+    url: https://github.com/Penn-Medicine-CHCI/cobalt-api/issues
+  - type: SecurityPolicy
+    url: https://github.com/Penn-Medicine-CHCI/cobalt-api/blob/master/SECURITY.md
   - type: AgenticAccess
     url: agentic-access/penn-medicine-agentic-access.yml
   - type: DomainSecurity
