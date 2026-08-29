@@ -1,0 +1,47 @@
+slug: penn-medicine
+provider: Penn Medicine
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Healthcare Providers
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Bulk Data
+  spec_file: penn-medicine-bulk-data-api-openapi.yml
+  capability_id: BC-2900.60
+  capability_id_l1: BC-2900
+  capability_name: Healthcare Interoperability Operations
+  confidence: 0.85
+  evidence: GET /Group/{id}/$export "Export Group Bulk Data" ... "HL7 FHIR Bulk Data Access (Flat FHIR)
+    capability statement"
+  reason: FHIR bulk export endpoint operated by a health system to share health records with external
+    applications — health information exchange / FHIR endpoint operation.
+- tag: Patient Access
+  spec_file: penn-medicine-patient-access-api-openapi.yml
+  capability_id: BC-2900.60
+  capability_id_l1: BC-2900
+  capability_name: Healthcare Interoperability Operations
+  confidence: 0.85
+  evidence: '"CMS-mandated Patient Access and Provider Directory data" with "Search Condition", "Search
+    MedicationRequest", "Search Coverage"'
+  reason: Provider-operated FHIR R4 API exposing clinical records to patient-authorised apps under the
+    CMS Patient Access rule — this is healthcare interoperability operations (FHIR endpoints, patient-initiated
+    data sharing) rather than the clinical documentation workflow itself.
+- tag: Provider Directory
+  spec_file: penn-medicine-provider-directory-api-openapi.yml
+  capability_id: BC-2900.60
+  capability_id_l1: BC-2900
+  capability_name: Healthcare Interoperability Operations
+  confidence: 0.75
+  evidence: '"Search Practitioner", "Search PractitionerRole", "Search Organization", "Search Endpoint"
+    ... "CMS-mandated ... Provider Directory data"'
+  reason: 'Publishing practitioner, organisation, location and FHIR endpoint directory data through the
+    health system''s FHIR server — interoperability operations. Not credentialing: no verification or
+    privileging operations appear.'

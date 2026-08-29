@@ -310,6 +310,9 @@ apis:
   - type: Sandbox
     url: https://fhir.epic.com/Documentation?docId=testpatients
 common:
+  - type: CapabilityMap
+    url: capabilities/penn-medicine-capability-edges.yml
+    name: Penn Medicine Business Capability Map
   - type: IssueTracker
     url: https://github.com/Penn-Medicine-CHCI/cobalt-api/issues
   - type: SecurityPolicy
