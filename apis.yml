@@ -310,6 +310,8 @@ apis:
   - type: Sandbox
     url: https://fhir.epic.com/Documentation?docId=testpatients
 common:
+  - type: Website
+    url: https://www.pennmedicine.org/
   - type: CapabilityMap
     url: capabilities/penn-medicine-capability-edges.yml
     name: Penn Medicine Business Capability Map
