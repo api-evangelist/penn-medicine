@@ -18,17 +18,21 @@ description: >
   pennbiobank).
 url: https://github.com/api-evangelist/penn-medicine
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - penn-medicine-chci/cobalt-api
+    - penn-medicine-chci/cobalt-web
   open_source: unknown
   commercial: true
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: enterprise
@@ -129,13 +133,14 @@ apis:
     and Slate API docs); and the Penn Medicine BioBank (pennbiobank).
   humanURL: https://github.com/pennmedicine
   tags:
-  - Open-Source
+  - Open Source
   - Health Informatics
   - GitHub
   tags_raw:
   - Open Source
   - Health Informatics
   - GitHub
+  - Open-Source
   properties:
   - type: GitHubOrganization
     url: https://github.com/Penn-Medicine-CHCI
