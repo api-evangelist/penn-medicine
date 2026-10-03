@@ -93,13 +93,13 @@ paths:
             application/fhir+json: {}
 components:
   parameters:
-    name:
-      name: name
+    address:
+      name: address
       in: query
       schema:
         type: string
-    address:
-      name: address
+    _id:
+      name: _id
       in: query
       schema:
         type: string
@@ -108,8 +108,8 @@ components:
       in: query
       schema:
         type: string
-    _id:
-      name: _id
+    name:
+      name: name
       in: query
       schema:
         type: string

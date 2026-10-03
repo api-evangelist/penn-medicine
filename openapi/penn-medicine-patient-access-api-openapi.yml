@@ -211,16 +211,17 @@ paths:
             application/fhir+json: {}
 components:
   parameters:
-    category:
-      name: category
+    code:
+      name: code
       in: query
       schema:
         type: string
-    _count:
-      name: _count
-      in: query
+    id:
+      name: id
+      in: path
+      required: true
       schema:
-        type: integer
+        type: string
     _id:
       name: _id
       in: query
@@ -232,14 +233,13 @@ components:
       required: true
       schema:
         type: string
-    id:
-      name: id
-      in: path
-      required: true
+    _count:
+      name: _count
+      in: query
       schema:
-        type: string
-    code:
-      name: code
+        type: integer
+    category:
+      name: category
       in: query
       schema:
         type: string
