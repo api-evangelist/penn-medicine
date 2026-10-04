@@ -93,6 +93,11 @@ paths:
             application/fhir+json: {}
 components:
   parameters:
+    specialty:
+      name: specialty
+      in: query
+      schema:
+        type: string
     address:
       name: address
       in: query
@@ -100,11 +105,6 @@ components:
         type: string
     _id:
       name: _id
-      in: query
-      schema:
-        type: string
-    specialty:
-      name: specialty
       in: query
       schema:
         type: string
