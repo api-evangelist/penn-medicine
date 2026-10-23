@@ -315,6 +315,8 @@ apis:
   - type: Sandbox
     url: https://fhir.epic.com/Documentation?docId=testpatients
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/penn-medicine/overview
   - type: Website
     url: https://www.pennmedicine.org/
   - type: CapabilityMap
