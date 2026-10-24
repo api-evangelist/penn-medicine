@@ -1,153 +1,172 @@
 {
+  "info": {
+    "_postman_id": "8feda746-8d8b-4643-a505-9f446898633f",
+    "name": "Penn Medicine FHIR R4 Patient Access API",
+    "description": "The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4\nimplementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader\nSMART on FHIR clinical resources.\n\nContact Support:\n Name: Penn Medicine FHIR API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-21T20:14:41.000Z",
+    "updatedAt": "2026-10-21T20:14:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8feda746-8d8b-4643-a505-9f446898633f"
+  },
   "item": [
     {
-      "id": "7c6068f6-cc79-4376-9ad8-12176acee317",
-      "name": "Patient Access",
-      "description": {
-        "content": "Patient-mediated clinical and claims data resources required under CMS-9115-F.",
-        "type": "text/plain"
-      },
+      "name": "Patient",
       "item": [
         {
-          "id": "155ca34f-3ac7-4db1-8b5e-05766b503d3a",
-          "name": "Read Patient",
-          "request": {
-            "name": "Read Patient",
-            "description": {},
-            "url": {
-              "path": [
-                "Patient",
-                ":id"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "id",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "{id}",
+          "item": [
             {
-              "id": "0c204074-22ef-40af-bb04-0c3bd793cb88",
-              "name": "Patient resource",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "Patient",
-                    ":id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "id",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
+              "name": "Read Patient",
+              "id": "30e80262-59a0-41c2-8631-01e43115cfa6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/fhir+json"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/Patient/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Patient",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "46ddb49a-97db-44f1-88cd-1a0a2e5b1ad8",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/fhir+json"
+                  "id": "7646f403-2565-4f5b-b912-e4f6de1b5b67",
+                  "name": "Patient resource",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/fhir+json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/Patient/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Patient",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/fhir+json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "",
+                  "createdAt": "2026-10-21T20:14:42.000Z",
+                  "updatedAt": "2026-10-21T20:14:42.000Z",
+                  "uid": "35240-7646f403-2565-4f5b-b912-e4f6de1b5b67"
                 }
               ],
-              "body": "\"\"",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-30e80262-59a0-41c2-8631-01e43115cfa6"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "9cfc5622-5a4d-44d7-ac9c-18a81ed32f7d",
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-9cfc5622-5a4d-44d7-ac9c-18a81ed32f7d"
         },
         {
-          "id": "3736996f-e325-4e91-9b57-fd6f50e38bad",
           "name": "Search Patient",
+          "id": "edf64741-2e61-4405-ad95-c83cf996b58f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "Search Patient",
-            "description": {},
-            "url": {
-              "path": [
-                "Patient"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "_id",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "_count",
-                  "value": "<integer>"
-                }
-              ],
-              "variable": []
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/Patient?_id=<string>&_count=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Patient"
+              ],
+              "query": [
+                {
+                  "key": "_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "_count",
+                  "value": "<integer>"
+                }
+              ]
+            }
           },
           "response": [
             {
-              "id": "fc8b02fe-3c74-4fae-9b37-ca75f43ded04",
+              "id": "47e02496-6fca-4baa-a70c-f0c804a981ac",
               "name": "Bundle of Patient resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "Patient"
-                  ],
+                  "raw": "{{baseUrl}}/Patient?_id=<string>&_count=<integer>",
                   "host": [
                     "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Patient"
                   ],
                   "query": [
                     {
@@ -158,182 +177,197 @@
                       "key": "_count",
                       "value": "<integer>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-47e02496-6fca-4baa-a70c-f0c804a981ac"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-edf64741-2e61-4405-ad95-c83cf996b58f"
+        }
+      ],
+      "id": "dcfd4a17-eb6f-4126-8b2d-f145d0ed3b05",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-dcfd4a17-eb6f-4126-8b2d-f145d0ed3b05"
+    },
+    {
+      "name": "AllergyIntolerance",
+      "item": [
+        {
+          "name": "Search Allergy Intolerance",
+          "id": "b549cfe4-1334-42a6-be26-326c121d2d3d",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "8b64bbb3-ea2f-4be4-8a92-87ee474ef3d9",
-          "name": "Search Allergy Intolerance",
+          },
           "request": {
-            "name": "Search Allergy Intolerance",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/AllergyIntolerance?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "AllergyIntolerance"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "fa3f325d-d67b-41b6-8820-12971b8f603a",
+              "id": "131f79e6-4484-4a7e-b311-524284f8fca9",
               "name": "Bundle of AllergyIntolerance resources",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "AllergyIntolerance"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "patient",
-                      "value": "<string>"
-                    }
-                  ],
-                  "variable": []
-                },
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/AllergyIntolerance?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "AllergyIntolerance"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "patient",
+                      "value": "<string>"
+                    }
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-131f79e6-4484-4a7e-b311-524284f8fca9"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-b549cfe4-1334-42a6-be26-326c121d2d3d"
+        }
+      ],
+      "id": "e77fbc03-2c11-45b3-ba6c-812f67ed66ec",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-e77fbc03-2c11-45b3-ba6c-812f67ed66ec"
+    },
+    {
+      "name": "Condition",
+      "item": [
+        {
+          "name": "Search Condition",
+          "id": "4fad2130-c5f1-497e-85e0-1ad42730abd7",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "112ed950-e7f3-4a64-8b9b-650d205bfc61",
-          "name": "Search Condition",
+          },
           "request": {
-            "name": "Search Condition",
-            "description": {},
-            "url": {
-              "path": [
-                "Condition"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "key": "category",
-                  "value": "<string>"
-                }
-              ],
-              "variable": []
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/Condition?patient=<string>&category=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Condition"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "patient",
+                  "value": "<string>"
+                },
+                {
+                  "key": "category",
+                  "value": "<string>"
+                }
+              ]
+            }
           },
           "response": [
             {
-              "id": "054d46ad-2764-447b-b0c4-38f61d8701e4",
+              "id": "3630de80-8712-473e-ae52-55b768d5c261",
               "name": "Bundle of Condition resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "Condition"
-                  ],
+                  "raw": "{{baseUrl}}/Condition?patient=<string>&category=<string>",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "Condition"
+                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     },
@@ -341,100 +375,106 @@
                       "key": "category",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-3630de80-8712-473e-ae52-55b768d5c261"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-4fad2130-c5f1-497e-85e0-1ad42730abd7"
+        }
+      ],
+      "id": "d4a94cf8-5a64-4f02-ab71-b4c6aeded51e",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-d4a94cf8-5a64-4f02-ab71-b4c6aeded51e"
+    },
+    {
+      "name": "Observation",
+      "item": [
+        {
+          "name": "Search Observation",
+          "id": "f8cab20d-11f1-4f21-9f9a-451d483cc32a",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "7d927a89-279f-45a2-a8c2-07f5f37f2edb",
-          "name": "Search Observation",
+          },
           "request": {
-            "name": "Search Observation",
-            "description": {},
-            "url": {
-              "path": [
-                "Observation"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "key": "category",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "code",
-                  "value": "<string>"
-                }
-              ],
-              "variable": []
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/Observation?patient=<string>&category=<string>&code=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Observation"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "patient",
+                  "value": "<string>"
+                },
+                {
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "key": "code",
+                  "value": "<string>"
+                }
+              ]
+            }
           },
           "response": [
             {
-              "id": "e6839919-80fc-4c57-9f2c-6c0bcf555808",
+              "id": "e147ddc9-d663-4a57-847d-4973d5000113",
               "name": "Bundle of Observation resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "Observation"
-                  ],
+                  "raw": "{{baseUrl}}/Observation?patient=<string>&category=<string>&code=<string>",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "Observation"
+                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     },
@@ -446,443 +486,482 @@
                       "key": "code",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-e147ddc9-d663-4a57-847d-4973d5000113"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-f8cab20d-11f1-4f21-9f9a-451d483cc32a"
+        }
+      ],
+      "id": "20891e39-8147-4130-987b-228fe816b548",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-20891e39-8147-4130-987b-228fe816b548"
+    },
+    {
+      "name": "MedicationRequest",
+      "item": [
+        {
+          "name": "Search Medication Request",
+          "id": "12ea5d94-4cbe-48e9-94da-5a2a1d65a2d5",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "7c2eb123-3234-4e4b-89e5-69226d09476f",
-          "name": "Search Medication Request",
+          },
           "request": {
-            "name": "Search Medication Request",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/MedicationRequest?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "MedicationRequest"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "2cf15baf-0717-4446-b01e-809eb4e628aa",
+              "id": "ef150f25-0dee-444b-a2db-a87c49b262f8",
               "name": "Bundle of MedicationRequest resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/MedicationRequest?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "MedicationRequest"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-ef150f25-0dee-444b-a2db-a87c49b262f8"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-12ea5d94-4cbe-48e9-94da-5a2a1d65a2d5"
+        }
+      ],
+      "id": "04dc8cd4-b823-49b2-be2f-949cecf536b9",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-04dc8cd4-b823-49b2-be2f-949cecf536b9"
+    },
+    {
+      "name": "Immunization",
+      "item": [
+        {
+          "name": "Search Immunization",
+          "id": "37752c6e-3db5-4f38-b50d-50d7e4e7c128",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "bf030523-e376-4091-a5ae-870e75f14dbd",
-          "name": "Search Immunization",
+          },
           "request": {
-            "name": "Search Immunization",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/Immunization?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "Immunization"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "5a8b4bc3-a0ca-4d0e-ba37-a958351bd2b7",
+              "id": "f618872f-f7b6-4968-b451-ef55893ca69f",
               "name": "Bundle of Immunization resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/Immunization?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "Immunization"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-f618872f-f7b6-4968-b451-ef55893ca69f"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-37752c6e-3db5-4f38-b50d-50d7e4e7c128"
+        }
+      ],
+      "id": "5860202a-75e7-4154-9abe-e806c2e8773c",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-5860202a-75e7-4154-9abe-e806c2e8773c"
+    },
+    {
+      "name": "Procedure",
+      "item": [
+        {
+          "name": "Search Procedure",
+          "id": "b38dd1ee-a9c9-4415-85c7-997e7c0ffbb1",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "f1a6524f-b8b2-4481-a4e8-7895c94912c6",
-          "name": "Search Procedure",
+          },
           "request": {
-            "name": "Search Procedure",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/Procedure?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "Procedure"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "8148c1ad-b424-4cf6-aeec-678e30cd2de1",
+              "id": "7ea5d71c-d410-49bc-ac5c-df58314e9fa3",
               "name": "Bundle of Procedure resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/Procedure?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "Procedure"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-7ea5d71c-d410-49bc-ac5c-df58314e9fa3"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-b38dd1ee-a9c9-4415-85c7-997e7c0ffbb1"
+        }
+      ],
+      "id": "62fe0169-7474-4b48-a3d8-0138d9ca262a",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-62fe0169-7474-4b48-a3d8-0138d9ca262a"
+    },
+    {
+      "name": "Encounter",
+      "item": [
+        {
+          "name": "Search Encounter",
+          "id": "6391f007-fa7a-4c79-9e97-5a6c22030b1d",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "e6a6e51a-bc57-46d7-a11f-6527896a8e8d",
-          "name": "Search Encounter",
+          },
           "request": {
-            "name": "Search Encounter",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/Encounter?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "Encounter"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "506f9f24-66a4-424f-b66c-ba152b39e766",
+              "id": "f402a55e-9446-4f3a-9d7c-e087a853ba95",
               "name": "Bundle of Encounter resources",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "Encounter"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "patient",
-                      "value": "<string>"
-                    }
-                  ],
-                  "variable": []
-                },
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/Encounter?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Encounter"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "patient",
+                      "value": "<string>"
+                    }
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-f402a55e-9446-4f3a-9d7c-e087a853ba95"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-6391f007-fa7a-4c79-9e97-5a6c22030b1d"
+        }
+      ],
+      "id": "0d348a3c-eb1d-4c33-bff6-5fcf7df4aa0a",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-0d348a3c-eb1d-4c33-bff6-5fcf7df4aa0a"
+    },
+    {
+      "name": "DiagnosticReport",
+      "item": [
+        {
+          "name": "Search Diagnostic Report",
+          "id": "3d37767f-1658-4bd2-9fc2-158b4ecd4b41",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "c38f2ec1-1996-411f-a884-43a7602e708a",
-          "name": "Search Diagnostic Report",
+          },
           "request": {
-            "name": "Search Diagnostic Report",
-            "description": {},
-            "url": {
-              "path": [
-                "DiagnosticReport"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "key": "category",
-                  "value": "<string>"
-                }
-              ],
-              "variable": []
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/DiagnosticReport?patient=<string>&category=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "DiagnosticReport"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "patient",
+                  "value": "<string>"
+                },
+                {
+                  "key": "category",
+                  "value": "<string>"
+                }
+              ]
+            }
           },
           "response": [
             {
-              "id": "2cd7d3d4-b7cd-41fa-815d-1e02ab9d9350",
+              "id": "09ba7e5c-a916-4066-844a-baac5d119bd1",
               "name": "Bundle of DiagnosticReport resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "DiagnosticReport"
-                  ],
+                  "raw": "{{baseUrl}}/DiagnosticReport?patient=<string>&category=<string>",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "DiagnosticReport"
+                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     },
@@ -890,402 +969,415 @@
                       "key": "category",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-09ba7e5c-a916-4066-844a-baac5d119bd1"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-3d37767f-1658-4bd2-9fc2-158b4ecd4b41"
+        }
+      ],
+      "id": "1f7dc768-8877-4be1-9f85-cb2f68573e50",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-1f7dc768-8877-4be1-9f85-cb2f68573e50"
+    },
+    {
+      "name": "DocumentReference",
+      "item": [
+        {
+          "name": "Search Document Reference",
+          "id": "36e78f74-22b9-42ef-a763-043ce2505c5e",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "061836b4-7a25-40c4-965e-4dd2139d43a7",
-          "name": "Search Document Reference",
+          },
           "request": {
-            "name": "Search Document Reference",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/DocumentReference?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "DocumentReference"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "ac8d8bff-fe19-47d6-b7f3-26a3b0969d62",
+              "id": "a2160945-d75c-4edf-ad33-cf0b669ceeab",
               "name": "Bundle of DocumentReference resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/DocumentReference?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "DocumentReference"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-a2160945-d75c-4edf-ad33-cf0b669ceeab"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-36e78f74-22b9-42ef-a763-043ce2505c5e"
+        }
+      ],
+      "id": "9e33eca5-4b24-4d6e-b70e-529b0522f950",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-9e33eca5-4b24-4d6e-b70e-529b0522f950"
+    },
+    {
+      "name": "Coverage",
+      "item": [
+        {
+          "name": "Search Coverage",
+          "id": "542b4315-e4ce-478e-bb58-d02e3533dee7",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "ae7b864a-eae7-44d3-8538-9fff6e1dacca",
-          "name": "Search Coverage",
+          },
           "request": {
-            "name": "Search Coverage",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/Coverage?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "Coverage"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "c35988ff-cf62-4dfe-a1c1-9732127601ff",
+              "id": "b9b92eac-8591-44d2-a8eb-f396395aec3b",
               "name": "Bundle of Coverage resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/Coverage?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "Coverage"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-b9b92eac-8591-44d2-a8eb-f396395aec3b"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-542b4315-e4ce-478e-bb58-d02e3533dee7"
+        }
+      ],
+      "id": "e18a2b9e-c359-406f-b5c2-99e515831a90",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-e18a2b9e-c359-406f-b5c2-99e515831a90"
+    },
+    {
+      "name": "ExplanationOfBenefit",
+      "item": [
+        {
+          "name": "Search Explanation of Benefit",
+          "id": "f5cb5342-059d-47f2-987b-dd7a58d35456",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "0b5c5a8e-99e7-42ac-9ab9-b8ea3a3cf085",
-          "name": "Search Explanation of Benefit",
+          },
           "request": {
-            "name": "Search Explanation of Benefit",
-            "description": {},
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              }
+            ],
             "url": {
+              "raw": "{{baseUrl}}/ExplanationOfBenefit?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "ExplanationOfBenefit"
               ],
-              "host": [
-                "{{baseUrl}}"
-              ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "(Required) ",
                   "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
+                  "value": "<string>"
                 }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/fhir+json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+              ]
+            }
           },
           "response": [
             {
-              "id": "702cf469-3415-4eaa-8093-736c1b42efa3",
+              "id": "3782de06-f63c-4076-b241-d432635500f1",
               "name": "Bundle of ExplanationOfBenefit resources",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/ExplanationOfBenefit?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "ExplanationOfBenefit"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "(Required) ",
                       "key": "patient",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/fhir+json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-3782de06-f63c-4076-b241-d432635500f1"
             }
           ],
-          "event": [],
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-f5cb5342-059d-47f2-987b-dd7a58d35456"
+        }
+      ],
+      "id": "a3f46f19-f5fe-4a66-a52f-a48043ac32d8",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-a3f46f19-f5fe-4a66-a52f-a48043ac32d8"
+    },
+    {
+      "name": "Claim",
+      "item": [
+        {
+          "name": "Search Claim",
+          "id": "aef13c56-7041-4367-a0b7-b3da295a01ce",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "69fa9b7a-cdf4-4ec8-97b9-61765ed98ce5",
-          "name": "Search Claim",
+          },
           "request": {
-            "name": "Search Claim",
-            "description": {},
-            "url": {
-              "path": [
-                "Claim"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "patient",
-                  "value": "<string>",
-                  "description": "(Required) "
-                }
-              ],
-              "variable": []
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/Claim?patient=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Claim"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "patient",
+                  "value": "<string>"
+                }
+              ]
+            }
           },
           "response": [
             {
-              "id": "c97d4695-2633-4069-aeff-e22ed0b1134d",
+              "id": "5235d6a7-b880-4ee4-b390-f39043e5265b",
               "name": "Bundle of Claim resources",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "Claim"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "patient",
-                      "value": "<string>"
-                    }
-                  ],
-                  "variable": []
-                },
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/fhir+json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/Claim?patient=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Claim"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "patient",
+                      "value": "<string>"
+                    }
+                  ]
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/fhir+json"
                 }
               ],
-              "body": "\"\"",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-10-21T20:14:42.000Z",
+              "updatedAt": "2026-10-21T20:14:42.000Z",
+              "uid": "35240-5235d6a7-b880-4ee4-b390-f39043e5265b"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-21T20:14:42.000Z",
+          "updatedAt": "2026-10-21T20:14:42.000Z",
+          "uid": "35240-aef13c56-7041-4367-a0b7-b3da295a01ce"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4",
-      "key": "baseUrl"
+      "id": "f5bc966b-205e-48a7-af55-a27b4c0b972c",
+      "createdAt": "2026-10-21T20:14:42.000Z",
+      "updatedAt": "2026-10-21T20:14:42.000Z",
+      "uid": "35240-f5bc966b-205e-48a7-af55-a27b4c0b972c"
     }
   ],
   "auth": {
@@ -1293,29 +1385,30 @@
     "oauth2": [
       {
         "key": "scope",
-        "value": "launch openid fhirUser profile offline_access"
+        "value": "launch openid fhirUser profile offline_access",
+        "type": "string"
       },
       {
         "key": "accessTokenUrl",
-        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token"
+        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token",
+        "type": "string"
       },
       {
         "key": "authUrl",
-        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize"
+        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize",
+        "type": "string"
       },
       {
         "key": "grant_type",
-        "value": "authorization_code"
+        "value": "authorization_code",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "7ebb9c2b-7521-4ad1-9691-8e2bccac0b63",
-    "name": "Penn Medicine FHIR R4 Bulk Data Patient Access API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4\nimplementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader\nSMART on FHIR clinical resources. It conforms to US Core 6.1.0 and the HL7 FHIR Bulk Data Access\n(Flat FHIR) capability statement.\n\nSoftware: Epic (November 2025 release, released 2026-03-19).\n\nAuthorization is OAuth 2.0 / SMART-on-FHIR (authorization code, refresh token, client credentials,\nJWT bearer). App registration is performed through Epic on FHIR (https://fhir.epic.com) by\nselecting Penn Medicine (Organization ID 346) as the target endpoint.\n\n\nContact Support:\n Name: Penn Medicine FHIR API",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4"
     }
-  }
+  ]
 }

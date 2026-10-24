@@ -1,122 +1,129 @@
 {
+  "info": {
+    "_postman_id": "41ba75a3-de88-448c-b6d4-ba47981c4d57",
+    "name": "Penn Medicine FHIR R4 Bulk Data API",
+    "description": "The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4\nimplementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader\nSMART on FHIR clinical resources.\n\nContact Support:\n Name: Penn Medicine FHIR API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-21T20:12:57.000Z",
+    "updatedAt": "2026-10-21T20:12:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-41ba75a3-de88-448c-b6d4-ba47981c4d57"
+  },
   "item": [
     {
-      "id": "62cf8c60-470c-4612-8c1a-ba7c1ff9074b",
-      "name": "Bulk Data",
-      "description": {
-        "content": "HL7 FHIR Bulk Data Access (Flat FHIR) Group-level export.",
-        "type": "text/plain"
-      },
+      "name": "Group",
       "item": [
         {
-          "id": "ff68ecd9-b05c-4b6d-9ff5-d8c9c78c7fe3",
-          "name": "Export Group Bulk Data",
-          "request": {
-            "name": "Export Group Bulk Data",
-            "description": {
-              "content": "Initiates a Bulk Data (Flat FHIR) export for a Group of patients per\nHL7 FHIR Bulk Data Access IG. Requires client_credentials authentication and the\n`system/*.read` scope. Status is polled at the Content-Location URL.\n",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "Group",
-                ":id",
-                "$export"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "_type",
-                  "value": "<string>"
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "id",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "{id}",
+          "item": [
             {
-              "id": "4729397e-a0bb-4795-a10b-5343b4cb5294",
-              "name": "Export accepted; poll Content-Location header for status.",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "Group",
-                    ":id",
-                    "$export"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "_type",
-                      "value": "<string>"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "id",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Accepted",
-              "code": 202,
-              "header": [
+              "name": "$export",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "text/plain"
+                  "name": "Export Group Bulk Data",
+                  "id": "6b68a899-eebb-4407-a27e-5f2be4313786",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/Group/:id/$export?_type=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Group",
+                        ":id",
+                        "$export"
+                      ],
+                      "query": [
+                        {
+                          "key": "_type",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "e28455a6-07a6-4112-8853-d1682f9b1fb4",
+                          "key": "id",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Initiates a Bulk Data (Flat FHIR) export for a Group of patients per\nHL7 FHIR Bulk Data Access IG. Requires client_credentials authentication and the\n`system/*.read` scope. Status is polled at the Content-Location URL."
+                  },
+                  "response": [
+                    {
+                      "id": "1bcf839b-d596-4496-9530-b1dfd08fcbf8",
+                      "name": "Export accepted; poll Content-Location header for status.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/Group/:id/$export?_type=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "Group",
+                            ":id",
+                            "$export"
+                          ],
+                          "query": [
+                            {
+                              "key": "_type",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-10-21T20:12:57.000Z",
+                      "updatedAt": "2026-10-21T20:12:57.000Z",
+                      "uid": "35240-1bcf839b-d596-4496-9530-b1dfd08fcbf8"
+                    }
+                  ],
+                  "createdAt": "2026-10-21T20:12:57.000Z",
+                  "updatedAt": "2026-10-21T20:12:57.000Z",
+                  "uid": "35240-6b68a899-eebb-4407-a27e-5f2be4313786"
                 }
               ],
-              "body": "",
-              "cookie": [],
-              "_postman_previewlanguage": "text"
+              "id": "875d891b-6ba4-40cd-9998-61d0059599ca",
+              "createdAt": "2026-10-21T20:12:57.000Z",
+              "updatedAt": "2026-10-21T20:12:57.000Z",
+              "uid": "35240-875d891b-6ba4-40cd-9998-61d0059599ca"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "068933c5-7a54-4f81-9b5a-2927cd7b66c8",
+          "createdAt": "2026-10-21T20:12:57.000Z",
+          "updatedAt": "2026-10-21T20:12:57.000Z",
+          "uid": "35240-068933c5-7a54-4f81-9b5a-2927cd7b66c8"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4",
-      "key": "baseUrl"
+      "id": "f082115a-7434-4983-afb4-0fa7200ede5a",
+      "createdAt": "2026-10-21T20:12:57.000Z",
+      "updatedAt": "2026-10-21T20:12:57.000Z",
+      "uid": "35240-f082115a-7434-4983-afb4-0fa7200ede5a"
     }
   ],
   "auth": {
@@ -124,29 +131,30 @@
     "oauth2": [
       {
         "key": "scope",
-        "value": "launch openid fhirUser profile offline_access"
+        "value": "launch openid fhirUser profile offline_access",
+        "type": "string"
       },
       {
         "key": "accessTokenUrl",
-        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token"
+        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/token",
+        "type": "string"
       },
       {
         "key": "authUrl",
-        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize"
+        "value": "https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize",
+        "type": "string"
       },
       {
         "key": "grant_type",
-        "value": "authorization_code"
+        "value": "authorization_code",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "26d24179-c906-4b3b-8563-cc5720d3bfa2",
-    "name": "Penn Medicine FHIR R4 Bulk Data API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "The University of Pennsylvania Health Systems FHIR Server is an Epic-backed HL7 FHIR R4\nimplementation exposing CMS-mandated Patient Access and Provider Directory data, plus broader\nSMART on FHIR clinical resources. It conforms to US Core 6.1.0 and the HL7 FHIR Bulk Data Access\n(Flat FHIR) capability statement.\n\nSoftware: Epic (November 2025 release, released 2026-03-19).\n\nAuthorization is OAuth 2.0 / SMART-on-FHIR (authorization code, refresh token, client credentials,\nJWT bearer). App registration is performed through Epic on FHIR (https://fhir.epic.com) by\nselecting Penn Medicine (Organization ID 346) as the target endpoint.\n\n\nContact Support:\n Name: Penn Medicine FHIR API",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4"
     }
-  }
+  ]
 }
