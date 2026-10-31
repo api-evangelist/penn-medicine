@@ -1,4 +1,4 @@
-# Penn Medicine (penn-medicine)
+# Penn Medicine
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,174 +64,174 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Penn Medicine is the University of Pennsylvania Health System (UPHS) plus the Perelman School of Medicine. It is an $11.9 billion enterprise powered by nearly 49,000 faculty and staff, operating six hospitals (Hospital of the University of Pennsylvania, Penn Presbyterian Medical Center, Chester County Hospital, Lancaster General Health, Princeton Health, and Pennsylvania Hospital — the first hospital in the United States, chartered in 1751) plus Penn Medicine at Home, Good Shepherd Penn Partners Rehabilitation, Lancaster Behavioral Health Hospital, and Princeton House Behavioral Health. The Perelman School of Medicine was awarded $580 million in NIH funding in fiscal year 2023.
+Penn Medicine is the University of Pennsylvania Health System (UPHS) plus the Perelman School of Medicine. It is an $11.9 billion enterprise powered by nearly 49,000 faculty and staff, operating six hospitals (Hospital of the University of Pennsylvania, Penn Presbyterian Medical Center, Chester County Hospital, Lancaster General Health, Princeton Health, and Pennsylvania Hospital — the first hospital in the United States, chartered in 1751) plus Penn Medicine at Home, Good Shepherd Penn Partners Rehabilitation, Lancaster Behavioral Health Hospital, and Princeton House Behavioral Health. The Perelman School of Medicine was awarded $580 million in NIH funding in fiscal year 2023. From an API perspective, Penn Medicine runs a production Epic-backed HL7 FHIR R4 endpoint at `https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4` (Epic Organization ID 346, implementation description "University of Pennsylvania Health Systems FHIR Server"). The CapabilityStatement instantiates `us-core-server|6.1.0` and the HL7 Bulk Data Access IG, exposes 59 FHIR resource types covering Patient Access (clinical + claims) and Provider Directory per CMS-9115-F, and protects them with OAuth 2.0 / SMART-on-FHIR. Penn Medicine also operates the MyPennMedicine MyChart patient portal and the PhysicianLink referring-provider portal, and publishes open-source informatics work through several Perelman School of Medicine GitHub orgs (Penn-Medicine-CHCI, pennsignals, PMACS, pennbiobank).
 
-From an API perspective, Penn Medicine runs a production Epic-backed HL7 FHIR R4 endpoint at `https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4` (Epic Organization ID 346, implementation description "University of Pennsylvania Health Systems FHIR Server"). The CapabilityStatement instantiates `us-core-server|6.1.0` and the HL7 Bulk Data Access IG, exposes 59 FHIR resource types covering Patient Access (clinical + claims) and Provider Directory per CMS-9115-F, and protects them with OAuth 2.0 / SMART-on-FHIR. Penn Medicine also operates the MyPennMedicine MyChart patient portal and the PhysicianLink referring-provider portal, and publishes open-source informatics work through several Perelman School of Medicine GitHub orgs (Penn-Medicine-CHCI, pennsignals, PMACS, pennbiobank).
+**Areas:** Healthcare · Hospitals · Academic Medical Center · FHIR · SMART on FHIR · Patient Access · Provider Directory · CMS Interoperability · US Core · Bulk Data · Epic
 
-**APIs.json:** [https://github.com/api-evangelist/penn-medicine](https://github.com/api-evangelist/penn-medicine)
+## Penn Medicine on APIs.io
 
-## Tags
+Everything profiled for Penn Medicine is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/penn-medicine/](https://apis.io/providers/penn-medicine/)** — or go straight to one of the APIs or properties below.
 
-- Healthcare
-- Hospital
-- Academic Medical Center
-- FHIR
-- SMART On FHIR
-- Patient Access
-- Provider Directory
-- CMS Interoperability
-- US Core
-- Bulk Data
-- Epic
+### APIs (7)
 
-## Timestamps
+- [MyPennMedicine Patient Portal](https://apis.io/apis/penn-medicine/mypennmedicine-patient-portal/) — MyChart-based patient portal that gives Penn Medicine patients access to medical records, lab results, secure messaging with their care team, telehealth…
+- [PhysicianLink Referring Physician Portal](https://apis.io/apis/penn-medicine/physicianlink-referring-physician-portal/) — EpicLink-based portal for community and referring physicians that provides secure access to Penn Medicine patient records: clinical notes, lab and imaging…
+- [Penn Medicine Open Source Health Informatics](https://apis.io/apis/penn-medicine/penn-medicine-open-source-health-informatics/) — Penn Medicine and the Perelman School of Medicine publish open-source health-informatics software across several GitHub organizations: Penn Medicine Center…
+- [Penn Medicine Bulk Data API](https://apis.io/apis/penn-medicine/penn-medicine-bulk-data-api/) — HL7 FHIR Bulk Data Access (Flat FHIR) Group-level export.
+- [Penn Medicine Patient Access API](https://apis.io/apis/penn-medicine/penn-medicine-patient-access-api/) — Patient-mediated clinical and claims data resources required under CMS-9115-F.
+- [Penn Medicine Provider Directory API](https://apis.io/apis/penn-medicine/penn-medicine-provider-directory-api/) — Public provider, organization, location, and endpoint resources required under CMS-9115-F.
+- [Penn Medicine SMART API](https://apis.io/apis/penn-medicine/penn-medicine-smart-api/) — SMART on FHIR launch and discovery endpoints.
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Penn Medicine FHIR R4 API
+#### Agentic access (1)
 
-The University of Pennsylvania Health Systems FHIR Server. Epic (November 2025) on the back end,
-conforming to US Core 6.1.0 and the HL7 Bulk Data Access IG. Serves Patient Access (clinical + claims)
-and Provider Directory data per CMS-9115-F, exposing 59 FHIR resource types including Patient,
-AllergyIntolerance, Condition, Observation, MedicationRequest, Immunization, Procedure, Encounter,
-DiagnosticReport, DocumentReference, Coverage, ExplanationOfBenefit, Claim, Practitioner,
-PractitionerRole, Organization, Location, and Endpoint. App registration is performed through
-Epic on FHIR (https://fhir.epic.com) by selecting Penn Medicine (Organization ID 346) as the target.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records](https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records)
-- **Base URL:** `https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4`
+- [Penn Medicine Agentic Access](https://apis.io/agentic-access/penn-medicine/penn-medicine-agentic-access/)
 
-#### Tags
+#### JSON Schema (4)
 
-- FHIR
-- SMART On FHIR
-- Patient Access
-- Provider Directory
-- Bulk Data
-- US Core
+The data models the API reads and writes.
 
-#### Properties
+- [Penn Medicine FHIR Observation](https://apis.io/schemas/penn-medicine/penn-medicine-fhir-observation/)
+- [Penn Medicine FHIR Organization](https://apis.io/schemas/penn-medicine/penn-medicine-fhir-organization/)
+- [Penn Medicine FHIR Patient](https://apis.io/schemas/penn-medicine/penn-medicine-fhir-patient/)
+- [Penn Medicine FHIR Practitioner](https://apis.io/schemas/penn-medicine/penn-medicine-fhir-practitioner/)
 
-- [Documentation](https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records)
-- [API Reference](https://ssproxy.pennhealth.com/PRD-FHIR/api/FHIR/R4/metadata)
-- [OpenAPI](openapi/penn-medicine-fhir-r4-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/penn-medicine-fhir-r4.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/penn-medicine-fhir-r4.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/penn-medicine-fhir-patient-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/penn-medicine-fhir-organization-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/penn-medicine-fhir-practitioner-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/penn-medicine-fhir-observation-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Example](examples/penn-medicine-fhir-patient-example.json)
-- [Example](examples/penn-medicine-fhir-organization-example.json)
-- [Example](examples/penn-medicine-fhir-practitioner-example.json)
-- [Example](examples/penn-medicine-fhir-observation-example.json)
-- [Example](examples/penn-medicine-fhir-bulk-export-example.json)
-- [Authentication](https://ssproxy.pennhealth.com/PRD-FHIR/oauth2/authorize)
-- [Sandbox](https://fhir.epic.com/Documentation?docId=testpatients)
+#### JSON-LD (1)
 
-### MyPennMedicine Patient Portal
+Linked-data contexts for the provider's vocabulary.
 
-MyChart-based patient portal that gives Penn Medicine patients access to medical records, lab
-results, secure messaging with their care team, telehealth visits, medication refills, prescription
-management, bill pay, and appointment scheduling across UPHS facilities. SMART apps approved via
-Epic on FHIR connect to the underlying Penn Medicine FHIR R4 API.
+- [Penn Medicine Context](https://apis.io/jsonld/penn-medicine/penn-medicine-context/)
 
-- **Human URL:** [https://www.pennmedicine.org/patient-resources/mypennmedicine](https://www.pennmedicine.org/patient-resources/mypennmedicine)
-- **Base URL:** `https://secure.mypennmedicine.org`
+#### Vocabulary (1)
 
-#### Tags
+The provider's domain terms, defined.
 
-- Patient Portal
-- MyChart
-- Patient Access
+- [Penn Medicine Vocabulary](https://apis.io/vocabularies/penn-medicine/penn-medicine-vocabulary/)
 
-#### Properties
+#### Examples (5)
 
-- [Portal](https://secure.mypennmedicine.org/)
-- [Documentation](https://www.pennmedicine.org/patient-resources/mypennmedicine)
-- [Postman Collection](collections/penn-medicine-fhir-r4.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/penn-medicine-fhir-r4.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Example requests and responses.
 
-### PhysicianLink Referring Physician Portal
+- [Penn Medicine Fhir Bulk Export Example](https://apis.io/examples/penn-medicine/penn-medicine-fhir-bulk-export-example/)
+- [Penn Medicine Fhir Observation Example](https://apis.io/examples/penn-medicine/penn-medicine-fhir-observation-example/)
+- [Penn Medicine Fhir Organization Example](https://apis.io/examples/penn-medicine/penn-medicine-fhir-organization-example/)
+- [Penn Medicine Fhir Patient Example](https://apis.io/examples/penn-medicine/penn-medicine-fhir-patient-example/)
+- [Penn Medicine Fhir Practitioner Example](https://apis.io/examples/penn-medicine/penn-medicine-fhir-practitioner-example/)
 
-EpicLink-based portal for community and referring physicians that provides secure access to Penn
-Medicine patient records: clinical notes, lab and imaging results, medication lists, and the
-ability to refer patients and follow care for shared patients.
+#### Collections (5)
 
-- **Human URL:** [https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink](https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink)
-- **Base URL:** `https://secure3.pennmedicine.org/EpicLink`
+Postman and Open Collection request collections.
 
-#### Tags
+- [Penn Medicine FHIR R4 Bulk Data API](https://apis.io/collections/penn-medicine/open-penn-medicine-bulk-data-api/)
+- [Penn Medicine FHIR R4 API](https://apis.io/collections/penn-medicine/open-penn-medicine-fhir-r4/)
+- [Penn Medicine FHIR R4 Bulk Data Patient Access API](https://apis.io/collections/penn-medicine/open-penn-medicine-patient-access-api/)
+- [Penn Medicine FHIR R4 Bulk Data Provider Directory API](https://apis.io/collections/penn-medicine/open-penn-medicine-provider-directory-api/)
+- [Penn Medicine FHIR R4 Bulk Data SMART API](https://apis.io/collections/penn-medicine/open-penn-medicine-smart-api/)
 
-- Referring Provider
-- EMR Access
-- Epic
+#### Governance rules (2)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Portal](https://secure3.pennmedicine.org/EpicLink/common/epic_login.asp)
-- [Documentation](https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records/physicianlink)
-- [Postman Collection](collections/penn-medicine-fhir-r4.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/penn-medicine-fhir-r4.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Penn Medicine — fhir rules](https://apis.io/rules/penn-medicine/penn-medicine-fhir-rules/)
+- [Penn Medicine — jsonschema rules](https://apis.io/rules/penn-medicine/penn-medicine-jsonschema-spectral-rules/)
 
-### Penn Medicine Open Source Health Informatics
+#### Security (2)
 
-Penn Medicine and the Perelman School of Medicine publish open-source health-informatics software
-across several GitHub organizations: Penn Medicine Center for Health Care Innovation
-(Penn-Medicine-CHCI, behind the Cobalt mental-health platform — cobalt-api in Java and cobalt-web
-in TypeScript); Penn Signals / Penn Medicine Predictive Healthcare (pennsignals — Databricks
-MCP agent templates; historically the home of CHIME, the COVID-19 Hospital Impact Model); Penn
-Medicine Academic Computing Services (PMACS — 17 Rails libraries, JSON:API tools, Oracle adapters,
-and Slate API docs); and the Penn Medicine BioBank (pennbiobank).
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://github.com/pennmedicine](https://github.com/pennmedicine)
+- [Penn Medicine Authentication](https://apis.io/security/penn-medicine/penn-medicine-authentication/)
+- [Penn Medicine Domain Security](https://apis.io/security/penn-medicine/penn-medicine-domain-security/)
 
-#### Tags
+#### OAuth scopes (1)
 
-- Open Source
-- Health Informatics
-- GitHub
+The permissions the API asks for.
 
-#### Properties
+- [Penn Medicine Scopes](https://apis.io/scopes/penn-medicine/penn-medicine-scopes/)
 
-- [GitHub Organization](https://github.com/Penn-Medicine-CHCI)
-- [GitHub Organization](https://github.com/pennsignals)
-- [GitHub Organization](https://github.com/PMACS)
-- [GitHub Organization](https://github.com/pennbiobank)
-- [GitHub Organization](https://github.com/pennmedicine)
-- [GitHub Repository](https://github.com/Penn-Medicine-CHCI/cobalt-api)
-- [GitHub Repository](https://github.com/Penn-Medicine-CHCI/cobalt-web)
-- [Postman Collection](collections/penn-medicine-fhir-r4.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/penn-medicine-fhir-r4.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Plans and pricing (1)
 
-## Common Properties
+Published plans, tiers and prices.
 
-- [Portal](https://www.pennmedicine.org)
-- [Developer Portal](https://fhir.epic.com)
-- [GitHub Organization](https://github.com/Penn-Medicine-CHCI)
-- [GitHub Organization](https://github.com/pennsignals)
-- [GitHub Organization](https://github.com/PMACS)
-- [Blog](https://www.pennmedicine.org/news)
-- [Privacy Policy](https://www.pennmedicine.org/privacy-policy)
-- [Terms of Service](https://www.pennmedicine.org/terms-of-use)
-- [Compliance](https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records)
+- [Penn Medicine Plans Pricing](https://apis.io/plans/penn-medicine/penn-medicine-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Penn Medicine Rate Limits](https://apis.io/rate-limits/penn-medicine/penn-medicine-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Penn Medicine Finops](https://apis.io/finops/penn-medicine/penn-medicine-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.pennmedicine.org/)
 - [Support](https://www.pennmedicine.org/contact-us)
-- [LinkedIn](https://www.linkedin.com/company/penn-medicine)
-- [Spectral Rules](rules/penn-medicine-fhir-rules.yml)
-- [JSON-LD](json-ld/penn-medicine-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Vocabulary](vocabulary/penn-medicine-vocabulary.yml)
-- [Plans](plans/penn-medicine-plans-pricing.yml)
-- [Rate Limits](rate-limits/penn-medicine-rate-limits.yml)
-- [Fin Ops](finops/penn-medicine-finops.yml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Solutions](undefined)
+- [Blog](https://www.pennmedicine.org/news)
+- [Compliance](https://www.pennmedicine.org/for-health-care-professionals/for-physicians/electronic-medical-records)
+- [Terms of service](https://www.pennmedicine.org/terms-of-use)
+- [Privacy policy](https://www.pennmedicine.org/privacy-policy)
+- [GitHub](https://github.com/Penn-Medicine-CHCI)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 38.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 62.0 |
+| Contract governance | 27.3 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 7.9 |
+
+**Agent readiness 28.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 26.6** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/penn-medicine/](https://apis.io/providers/penn-medicine/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Penn Medicine: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/penn-medicine/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
